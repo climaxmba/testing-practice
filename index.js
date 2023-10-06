@@ -1,7 +1,16 @@
-export default function capitalize(str) {
-    return str.toUpperCase();
+function capitalize(str) {
+  return str.toUpperCase();
 }
 
-// A reverseString function that takes a string and returns it reversed.
+function reverseString(str) {
+  return str.split("").reverse().join("");
+}
 
-// A calculator object that contains functions for the basic operations: add, subtract, divide, and multiply. Each of these functions should take two numbers and return the correct calculation.
+const calculator = {
+  multiply: (n1, n2) => n1 * n2,
+  divide: (n1, n2) => n1 / n2,
+  add: (n1, n2) => n1 + n2,
+  subtract: (n1, n2) => n1 - n2,
+};
+
+export { capitalize, reverseString, calculator };
