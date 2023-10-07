@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator } from "./index";
+import { capitalize, reverseString, calculator, ceaserCipher } from "./index";
 
 // capitalize
 test("capitalize works", () => {
@@ -22,4 +22,16 @@ test("calculator.add works", () => {
 });
 test("calculator.subtract works", () => {
   expect(calculator.subtract(10, 5)).toEqual(5);
+});
+
+// caesarCipher
+test("ceaserCipher encrypts text", () => {
+  expect(ceaserCipher("Hello world", 1)).toBe("Ifmmp xpsme");
+});
+test("ceaserCipher ignores non-alphabets", () => {
+  expect(ceaserCipher("!@#$%^&*()", 1)).toBe("!@#$%^&*()");
+});
+test("ceaserCipher decrypts text", () => {
+  expect(ceaserCipher(ceaserCipher("Hello world", 1), -1)).toBe("Hello world");
+  expect(ceaserCipher(ceaserCipher("Hello world", 10), -10)).toBe("Hello world");
 });
