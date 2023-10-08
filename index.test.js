@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator, ceaserCipher } from "./index";
+import { capitalize, reverseString, calculator, ceaserCipher, analyzeArray } from "./index";
 
 // capitalize
 test("capitalize works", () => {
@@ -34,4 +34,19 @@ test("ceaserCipher ignores non-alphabets", () => {
 test("ceaserCipher decrypts text", () => {
   expect(ceaserCipher(ceaserCipher("Hello world", 1), -1)).toBe("Hello world");
   expect(ceaserCipher(ceaserCipher("Hello world", 10), -10)).toBe("Hello world");
+});
+
+// analyzeArray
+test("analyzeArray works", () => {
+  expect(
+    analyzeArray(
+      [1, 8, 3, 4, 2, 6] ==
+        {
+          average: 4,
+          min: 1,
+          max: 8,
+          length: 6,
+        }
+    )
+  ).toBe(true);
 });

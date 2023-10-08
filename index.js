@@ -13,4 +13,20 @@ const calculator = {
   subtract: (n1, n2) => n1 - n2,
 };
 
-export { capitalize, reverseString, calculator };
+function ceaserCipher(string = "", shift = 1) {
+  const alphabets = "abcdefghijklmnopqrstuvwxyz";
+  const arr = string.split("");
+  for (let i = 0; i < string.length; i++) {
+    if (alphabets.includes(arr[i])) {
+      arr[i] = alphabets[Math.abs((alphabets.indexOf(arr[i]) + shift) % 26)];
+    } else if (alphabets.toUpperCase().includes(arr[i])) {
+      arr[i] =
+        alphabets.toUpperCase()[
+          Math.abs((alphabets.toUpperCase().indexOf(arr[i]) + shift) % 26)
+        ];
+    }
+  }
+  return arr.join("");
+}
+
+export { capitalize, reverseString, calculator, ceaserCipher };
