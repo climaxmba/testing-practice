@@ -29,8 +29,13 @@ function ceaserCipher(string = "", shift = 1) {
   return arr.join("");
 }
 
-function analyzeArray(arr = []) {
-  return arr;
+function analyzeArray(arr) {
+  return {
+    average: arr.reduce((prev, curr) => prev + curr) / arr.length,
+    min: Math.min(...arr),
+    max: Math.max(...arr),
+    length: arr.length
+  };
 }
 
 export { capitalize, reverseString, calculator, ceaserCipher, analyzeArray };
