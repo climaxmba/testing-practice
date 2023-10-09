@@ -1,4 +1,4 @@
-import { analyzeArray } from ".";
+import { analyzeArray } from "..";
 import isEqual from "lodash.isequal";
 
 test("Gives accurate array analysis", () => {

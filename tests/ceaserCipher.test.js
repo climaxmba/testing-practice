@@ -1,4 +1,4 @@
-import { ceaserCipher } from ".";
+import { ceaserCipher } from "..";
 
 test("Encrypts text", () => {
   expect(ceaserCipher("Hello world", 1)).toBe("Ifmmp xpsme");

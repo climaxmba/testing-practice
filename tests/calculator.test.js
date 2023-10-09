@@ -1,4 +1,4 @@
-import { calculator } from ".";
+import { calculator } from "..";
 
 test("Can multiply, divide, add and subtract", () => {
   expect(calculator.multiply(2, 3)).toEqual(6);

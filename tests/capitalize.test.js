@@ -1,4 +1,4 @@
-import { capitalize } from ".";
+import { capitalize } from "..";
 
 test("Capitalizes text", () => {
   expect(capitalize("hello")).toBe("HELLO");
