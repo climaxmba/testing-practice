@@ -14,19 +14,26 @@ const calculator = {
 };
 
 function ceaserCipher(string = "", shift = 1) {
-  const alphabets = "abcdefghijklmnopqrstuvwxyz";
-  const arr = string.split("");
+  // Convert shift to a value within 0-26
+  shift = ((shift % 26) + 26) % 26;
+  let encryptedStr = "";
+
   for (let i = 0; i < string.length; i++) {
-    if (alphabets.includes(arr[i])) {
-      arr[i] = alphabets[Math.abs((alphabets.indexOf(arr[i]) + shift) % 26)];
-    } else if (alphabets.toUpperCase().includes(arr[i])) {
-      arr[i] =
-        alphabets.toUpperCase()[
-          Math.abs((alphabets.toUpperCase().indexOf(arr[i]) + shift) % 26)
-        ];
+    let charCode = string.charCodeAt(i);
+
+    if (charCode >= 65 && charCode <= 90) {
+      // Uppercase
+      encryptedStr += String.fromCharCode((charCode - 65 + shift) % 26 + 65);
+    } else if (charCode >= 97 && charCode <= 122) {
+      // Lowercase
+      encryptedStr += String.fromCharCode((charCode - 97 + shift) % 26 + 97);
+    } else {
+      // Ignore non-alphabets
+      encryptedStr += string[i];
     }
   }
-  return arr.join("");
+
+  return encryptedStr;
 }
 
 function analyzeArray(arr) {
