@@ -29,4 +29,8 @@ function ceaserCipher(string = "", shift = 1) {
   return arr.join("");
 }
 
-export { capitalize, reverseString, calculator, ceaserCipher };
+function analyzeArray(arr = []) {
+  return arr;
+}
+
+export { capitalize, reverseString, calculator, ceaserCipher, analyzeArray };
